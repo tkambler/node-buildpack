@@ -9,7 +9,7 @@ echo $BUILD_DIR
 ls -al
 
 cd /usr/local
-tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz
+tar --strip-components 1 -xzf $BUILD_DIR/node-v12.13.0-linux-x64.tar.gz
 cd $BUILD_DIR
 
 export NODE_ENV=${NODE_ENV:-production}

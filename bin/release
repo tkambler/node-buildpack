@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-exit 0
+cat << EOF
+addons: []
+default_process_types:
+  web: npm start
+EOF

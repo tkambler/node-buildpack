@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo "Buildpack script: finalize"
-
-exit 0

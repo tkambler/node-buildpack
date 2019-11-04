@@ -2,4 +2,13 @@
 
 echo "Buildpack script: supply"
 
+BUILD_DIR=$(pwd)
+echo $BUILD_DIR
+
+ls -al
+
+cd /usr/local
+tar --strip-components 1 -xzf /tmp/node-v12.13.0-linux-x64.tar.gz
+cd $BUILD_DIR
+
 exit 0

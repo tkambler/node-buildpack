@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+echo "Buildpack script: supply"
+
 exit 0

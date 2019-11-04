@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo "Buildpack script: release"
+
+ls -al
+
 cat << EOF
 addons: []
 default_process_types:

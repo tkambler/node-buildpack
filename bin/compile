@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$(pwd)
+
+echo $BUILD_DIR
+
+exit 0

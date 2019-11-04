@@ -1,0 +1,25 @@
+---
+language: nodejs
+default_versions:
+  - name: node
+    version: 12.13.0
+include_files:
+  - bin/compile
+  - bin/detect
+  - bin/finalize
+  - bin/release
+  - bin/supply
+  - instantclient-basic-linux.x64-19.3.zip
+  - instantclient-sdk-linux.x64-19.3.zip
+  - node-v12.13.0-linux-x64.tar.gz
+url_to_dependency_map:
+  - match: node\/v(\d+\.\d+\.\d+)
+    name: node
+    version: "$1"
+dependencies:
+  - name: node
+    version: 12.13.0
+    uri: node-v12.13.0-linux-x64.tar.gz
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    cf_stacks:
+      - cflinuxfs2

@@ -5,16 +5,11 @@ set -o pipefail
 set -o nounset
 
 BUILD_DIR=$(pwd)
-echo $BUILD_DIR
-ls -al
 
-# export PATH=$PATH:/usr/local:/usr/local/bin
-export PATH="$BUILD_DIR/bin:$PATH:$HOME/bin:$HOME/node_modules/.bin"
+mkdir ./node
+tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node
 
-# cd /usr/local
-tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz
-# cd $BUILD_DIR
-
+export PATH="$PATH:$BUILD_DIR/node/bin"
 export NODE_ENV=${NODE_ENV:-production}
 export LD_LIBRARY_PATH=$BUILD_DIR/oracle/instantclient:${LD_LIBRARY_PATH}
 export OCI_LIB_DIR=$BUILD_DIR/oracle/instantclient

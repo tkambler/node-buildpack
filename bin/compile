@@ -7,7 +7,33 @@ set -o nounset
 CURRENT_DIR=$(pwd)
 BUILD_DIR=$1
 CACHE_DIR=$2
+ENV_DIR=${3:-}
 BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
+
+echo "ENV_DIR: $ENV_DIR"
+sleep 5
+
+## ?
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+echo "BP_DIR: $BP_DIR"
+sleep 5
+$BP_DIR/compile-extensions/bin/check_stack_support
+
+echo "Stack support checked"
+sleep 5
+
+source $BP_DIR/lib/environment.sh
+echo "environment.sh loaded"
+sleep 5
+
+create_env() {
+  write_profile "$BP_DIR" "$BUILD_DIR"
+  export_env_dir "$ENV_DIR"
+  create_default_env
+  add_oracle_env "$BUILD_DIR/.heroku"
+}
+
+create_env
 
 echo "CURRENT_DIR: $CURRENT_DIR"
 ls -al
@@ -43,7 +69,6 @@ tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node
 sleep 5
 
 echo "Node was extracted"
-ls -al $BUILD_DIR/node/bin
 
 ls -al
 sleep 5

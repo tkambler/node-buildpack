@@ -16,6 +16,8 @@ include_files:
   - instantclient-basic-linux.x64-19.3.zip
   - instantclient-sdk-linux.x64-19.3.zip
   - node-v12.13.0-linux-x64.tar.gz
+  - profile/nodejs.sh
+  - lib/environment.sh
 url_to_dependency_map:
   - match: node\/v(\d+\.\d+\.\d+)
     name: node

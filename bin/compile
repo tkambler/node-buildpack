@@ -12,23 +12,37 @@ BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 echo "CURRENT_DIR: $CURRENT_DIR"
 ls -al
 
+sleep 5
+
 cd $BUILD_DIR
 echo "BUILD_DIR: $BUILD_DIR"
 ls -al
+
+sleep 5
 
 cd $CACHE_DIR
 echo "CACHE_DIR: $CACHE_DIR"
 ls -al
 
+sleep 5
+
 cd $BUILDPACK_DIR
 echo "BUILDPACK_DIR: $BUILDPACK_DIR"
 ls -al
 
+sleep 5
+
 cd $BUILD_DIR
-mv $CACHE_DIR/node-v12.13.0-linux-x64.tar.gz .
+mv $CURRENT_DIR/node-v12.13.0-linux-x64.tar.gz .
+
+sleep 5
 
 mkdir ./node
 tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node
+
+sleep 5
+
+echo "Node was extracted"
 
 export PATH="$PATH:$BUILD_DIR/node/bin"
 export NODE_ENV=${NODE_ENV:-production}

@@ -8,6 +8,8 @@ BUILD_DIR=$(pwd)
 echo $BUILD_DIR
 ls -al
 
+export PATH="$PATH:/usr/local:/usr/local/bin"
+
 cd /usr/local
 tar --strip-components 1 -xzf $BUILD_DIR/node-v12.13.0-linux-x64.tar.gz
 cd $BUILD_DIR

@@ -33,7 +33,7 @@ ls -al
 sleep 5
 
 cd $BUILD_DIR
-mv $CURRENT_DIR/node-v12.13.0-linux-x64.tar.gz .
+mv $BUILDPACK_DIR/node-v12.13.0-linux-x64.tar.gz .
 
 sleep 5
 
@@ -43,6 +43,9 @@ tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node
 sleep 5
 
 echo "Node was extracted"
+
+ls -al
+sleep 5
 
 export PATH="$PATH:$BUILD_DIR/node/bin"
 export NODE_ENV=${NODE_ENV:-production}

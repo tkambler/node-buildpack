@@ -3,6 +3,10 @@ language: nodejs
 default_versions:
   - name: node
     version: 12.13.0
+exclude_files:
+  - .DS_Store
+  - .git
+  - Makefile
 include_files:
   - bin/compile
   - bin/detect

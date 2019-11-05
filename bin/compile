@@ -5,22 +5,32 @@ set -o pipefail
 set -o nounset
 
 CURRENT_DIR=$(pwd)
-BUILD_DIR=${1:-}
-CACHE_DIR=${2:-}
+BUILD_DIR=$1
+CACHE_DIR=$2
+BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
+DEPS_DIR="$BUILD_DIR/.cloudfoundry"
 
 echo "CURRENT_DIR: $CURRENT_DIR"
 ls -al
 
+cd $BUILD_DIR
 echo "BUILD_DIR: $BUILD_DIR"
-cd $BUILD_DIR
 ls -al
 
-echo "CACHE_DIR: $CACHE_DIR"
 cd $CACHE_DIR
+echo "CACHE_DIR: $CACHE_DIR"
+ls -al
+
+cd $BUILDPACK_DIR
+echo "BUILDPACK_DIR: $BUILDPACK_DIR"
+ls -al
+
+cd $DEPS_DIR
+echo "DEPS_DIR: $DEPS_DIR"
 ls -al
 
 cd $BUILD_DIR
-mv $CURRENT_DIR/node-v12.13.0-linux-x64.tar.gz .
+mv $BUILDPACK_DIR/node-v12.13.0-linux-x64.tar.gz .
 
 mkdir ./node
 tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node

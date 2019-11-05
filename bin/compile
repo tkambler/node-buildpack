@@ -4,7 +4,23 @@ set -e
 set -o pipefail
 set -o nounset
 
-BUILD_DIR=$(pwd)
+CURRENT_DIR=$(pwd)
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+
+echo "CURRENT_DIR: $CURRENT_DIR"
+ls -al
+
+echo "BUILD_DIR: $BUILD_DIR"
+cd $BUILD_DIR
+ls -al
+
+echo "CACHE_DIR: $CACHE_DIR"
+cd $CACHE_DIR
+ls -al
+
+cd $BUILD_DIR
+mv $CURRENT_DIR/node-v12.13.0-linux-x64.tar.gz .
 
 mkdir ./node
 tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node

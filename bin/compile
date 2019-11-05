@@ -47,8 +47,16 @@ echo "Node was extracted"
 ls -al
 sleep 5
 
+mv $BUILDPACK_DIR/instantclient-basic-linux.x64-19.3.zip .
+mv $BUILDPACK_DIR/instantclient-sdk-linux.x64-19.3.zip .
+mkdir oracle
+unzip instantclient-basic-linux.x64-19.3.zip
+mv instantclient_19_3 oracle/instantclient
+unzip instantclient-sdk-linux.x64-19.3.zip
+mv instantclient_19_3/sdk ./oracle/instantclient/sdk
+
 export PATH="$PATH:$BUILD_DIR/node/bin"
 export NODE_ENV=${NODE_ENV:-production}
-export LD_LIBRARY_PATH=$BUILD_DIR/oracle/instantclient:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=$BUILD_DIR/oracle/instantclient
 export OCI_LIB_DIR=$BUILD_DIR/oracle/instantclient
 export OCI_INC_DIR=$BUILD_DIR/oracle/instantclient/sdk/include

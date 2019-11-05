@@ -17,10 +17,6 @@ sleep 5
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 echo "BP_DIR: $BP_DIR"
 sleep 5
-$BP_DIR/compile-extensions/bin/check_stack_support
-
-echo "Stack support checked"
-sleep 5
 
 source $BP_DIR/lib/environment.sh
 echo "environment.sh loaded"

@@ -76,6 +76,9 @@ unzip instantclient-basic-linux.x64-12.2.0.1.0.zip
 mv instantclient_12_2 oracle/instantclient
 unzip instantclient-sdk-linux.x64-12.2.0.1.0.zip
 mv instantclient_12_2/sdk ./oracle/instantclient/sdk
+cd ./oracle/instantclient
+cp libclntsh.so.12.1 libclntsh.so
+cd $BUILD_DIR
 
 export PATH="$BUILD_DIR/node/bin":$PATH
 export NODE_ENV=${NODE_ENV:-production}

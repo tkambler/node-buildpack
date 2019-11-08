@@ -83,4 +83,4 @@ export LD_LIBRARY_PATH=$BUILD_DIR/oracle/instantclient
 export OCI_LIB_DIR=$BUILD_DIR/oracle/instantclient
 export OCI_INC_DIR=$BUILD_DIR/oracle/instantclient/sdk/include
 
-npm i oracledb
+npm rebuild oracledb

@@ -16,6 +16,7 @@ include_files:
   - instantclient-basic-linux.x64-19.3.zip
   - instantclient-sdk-linux.x64-19.3.zip
   - node-v12.13.0-linux-x64.tar.gz
+  - node-v8.16.2-linux-x64.tar.gz
   - profile/nodejs.sh
   - lib/environment.sh
 url_to_dependency_map:

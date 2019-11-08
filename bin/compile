@@ -55,12 +55,12 @@ ls -al
 sleep 5
 
 cd $BUILD_DIR
-mv $BUILDPACK_DIR/node-v12.13.0-linux-x64.tar.gz .
+mv $BUILDPACK_DIR/node-v8.16.2-linux-x64.tar.gz .
 
 sleep 5
 
 mkdir ./node
-tar --strip-components 1 -xzf node-v12.13.0-linux-x64.tar.gz -C ./node
+tar --strip-components 1 -xzf node-v8.16.2-linux-x64.tar.gz -C ./node
 
 sleep 5
 

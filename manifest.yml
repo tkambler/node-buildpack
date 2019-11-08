@@ -24,6 +24,12 @@ url_to_dependency_map:
     version: '$1'
 dependencies:
   - name: node
+    version: 8.16.2
+    uri: node-v8.16.2-linux-x64.tar.gz
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    cf_stacks:
+      - cflinuxfs2
+  - name: node
     version: 12.13.0
     uri: node-v12.13.0-linux-x64.tar.gz
     sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855

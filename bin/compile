@@ -10,6 +10,9 @@ CACHE_DIR=$2
 ENV_DIR=${3:-}
 BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 
+df -h
+ls -al
+
 echo "ENV_DIR: $ENV_DIR"
 sleep 5
 

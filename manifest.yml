@@ -13,28 +13,19 @@ include_files:
   - bin/finalize
   - bin/release
   - bin/supply
-  - instantclient-basic-linux.x64-19.3.zip
-  - instantclient-sdk-linux.x64-19.3.zip
   - instantclient-basic-linux.x64-12.2.0.1.0.zip
   - instantclient-sdk-linux.x64-12.2.0.1.0.zip
-  - node-v12.13.0-linux-x64.tar.gz
   - node-v8.16.2-linux-x64.tar.gz
   - profile/nodejs.sh
   - lib/environment.sh
 url_to_dependency_map:
   - match: node\/v(\d+\.\d+\.\d+)
     name: node
-    version: '$1'
+    version: "$1"
 dependencies:
   - name: node
     version: 8.16.2
     uri: node-v8.16.2-linux-x64.tar.gz
     sha256: 722d07291a8886384388c6795a747ec2055073f83dc73c0a97efba0022cc23ff
-    cf_stacks:
-      - cflinuxfs2
-  - name: node
-    version: 12.13.0
-    uri: node-v12.13.0-linux-x64.tar.gz
-    sha256: c69671c89d0faa47b64bd5f37079e4480852857a9a9366ee86cdd8bc9670074a
     cf_stacks:
       - cflinuxfs2
